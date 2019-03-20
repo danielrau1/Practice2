@@ -1,0 +1,39 @@
+<h1>Home</h1>
+
+
+<!--(1)The button will be for the event binding-->
+<!--<h3><u>Ex 1: Event binding</u></h3>-->
+<!--Click to call function <button (click)="firstClick1('hi all')">Click Me</button>-->
+
+<!--{{message}}-->
+<!--<br>-->
+<!--&lt;!&ndash;********************************************************&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;(2)Component binding&ndash;&gt;-->
+<!--&lt;!&ndash;To use ngModel need to import FormsModule into the app.module.ts&ndash;&gt;-->
+<!--<h3><u>Ex 2: Component binding</u></h3>-->
+<!--<input [(ngModel)]="email1" ><br>-->
+<!--{{email1}}-->
+
+<!--&lt;!&ndash;*********************************************************&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;(3)Using a method from a service&ndash;&gt;-->
+<!--<h3><u>Ex 3: Service method</u></h3>-->
+<!--Click the service method <button (click)="data.firstClick()">Click Service</button>-->
+<!--<br>-->
+<!--{{data.service_message}}-->
+<!--********************************************************-->
+
+
+<!--(4) Import from web. First need to app.module.ts to import HttpClientModule-->
+<!--The imported data will go to the service-->
+<h3><u>Ex 4: Import from the Web</u></h3>
+<ul *ngIf="users"> <!--Shows this element only if users has data in it-->
+  <li *ngFor="let user of users"> <!--Iterate through each element of users-->
+    <img [src]="user.avatar"> <!--Use property binding for the img-->
+    <p>{{user.first_name}} {{user.last_name}}</p>
+  </li>
+
+</ul>
